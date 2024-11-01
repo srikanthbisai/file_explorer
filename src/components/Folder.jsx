@@ -28,6 +28,7 @@ function Folder({ explorer }) {
             display: "flex",
             justifyContent: "space-between",
             width: "300px",
+            marginBottom: "10px", // Space between folders
           }}
         >
           <span className="folder" onClick={() => setExpand(!expand)}>
@@ -49,10 +50,11 @@ function Folder({ explorer }) {
           {showInput.visible && (
             <div className="inputContainer">
               <span>{showInput.isFolder ? "📁" : "📄"}</span>
-              <input className="inputContainer_input" 
-              autoFocus
-              type="text"
-              onBlur={()=> setShowInput({...showInput, visible:false})} 
+              <input
+                className="inputContainer_input"
+                autoFocus
+                type="text"
+                onBlur={() => setShowInput({ ...showInput, visible: false })}
               />
             </div>
           )}
@@ -68,14 +70,14 @@ function Folder({ explorer }) {
       <span
         className="file"
         style={{
-          color: "wheat",
-          backgroundColor: "slategrey",
+          color: "black",
           display: "flex",
           gap: "10px",
           flexDirection: "column",
           justifyContent: "space-between",
           width: "300px",
           padding: "10px",
+          marginBottom: "10px", 
         }}
       >
         📄 {explorer.name}
